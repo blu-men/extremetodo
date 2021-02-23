@@ -28,6 +28,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
+    <!-- vue.js読み込み -->
+    <?= $this->Html->script('vue.js') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
