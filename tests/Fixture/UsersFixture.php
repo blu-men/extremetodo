@@ -31,6 +31,21 @@ class UsersFixture extends TestFixture
             'collation' => 'utf8_general_ci'
         ],
     ];
+
+    public $records = [
+        [
+            'id' => 1001,
+            'username' => 'コレコレ',
+            'password' => 'korekore',
+            'role' => 'ライバー'
+        ],
+        [
+            'id' => 1002,
+            'username' => 'おみづ',
+            'password' => 'emushi',
+            'role' => 'ライバー',
+        ]
+    ];
     // @codingStandardsIgnoreEnd
 
     /**

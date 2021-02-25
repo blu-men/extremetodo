@@ -27,6 +27,18 @@ class TasksFixture extends TestFixture
             'collation' => 'utf8_general_ci'
         ],
     ];
+
+    public $records = [
+        [
+            'id' => 1001,
+            'task' => 'ミルク購入'
+        ],
+        [
+            'id' => 1002,
+            'task' => '酒'
+        ],
+        
+    ];
     // @codingStandardsIgnoreEnd
 
     /**
