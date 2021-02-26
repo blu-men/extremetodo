@@ -16,7 +16,7 @@ class TasksTableTest extends TestCase
      *
      * @var \App\Model\Table\TasksTable
      */
-    public $Tasks;
+    public $TasksTable;
 
     /**
      * Fixtures
@@ -36,7 +36,7 @@ class TasksTableTest extends TestCase
     {
         parent::setUp();
         $config = TableRegistry::getTableLocator()->exists('Tasks') ? [] : ['className' => TasksTable::class];
-        $this->Tasks = TableRegistry::getTableLocator()->get('Tasks', $config);
+        $this->TasksTable = TableRegistry::getTableLocator()->get('Tasks', $config);
     }
 
     /**
@@ -46,7 +46,7 @@ class TasksTableTest extends TestCase
      */
     public function tearDown() :void
     {
-        unset($this->Tasks);
+        unset($this->TasksTable);
 
         parent::tearDown();
     }
@@ -56,18 +56,26 @@ class TasksTableTest extends TestCase
      *
      * @return void
      */
-    public function testInitialize()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+    // public function testInitialize()
+    // {
+    //     $this->markTestIncomplete('Not implemented yet.');
+    // }
 
     /**
      * Test validationDefault method
      *
      * @return void
      */
-    public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
+    // public function testValidationDefault()
+    // {
+    //     $this->markTestIncomplete('Not implemented yet.');
+    // }
+    
+    public function testTaskTableFind() {
+        $result = $this->TasksTable->find('all')->first();
+        $this->assertFalse(empty($result));
+        $this->assertTrue(is_a($result,'App\Model\Entity\Task'));
+        $this->assertEquals($result->id, 1001);
+        $this->assertStringStartsWith('ミルク購入', $result->task);
     }
 }

@@ -35,7 +35,9 @@ class UsersTableTest extends TestCase
     public function setUp() :void
     {
         parent::setUp();
+        //Registryに'Users'インスタンスがあるかを判定
         $config = TableRegistry::getTableLocator()->exists('Users') ? [] : ['className' => UsersTable::class];
+        //get()で、$UsersにRegistry内のUsersを代入する
         $this->Users = TableRegistry::getTableLocator()->get('Users', $config);
     }
 

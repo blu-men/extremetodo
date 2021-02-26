@@ -45,8 +45,12 @@ class TaskTest extends TestCase
      *
      * @return void
      */
-    public function testInitialization()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
+    // public function testInitialization()
+    // {
+    //     $this->markTestIncomplete('Not implemented yet.');
+    // }
+    /** $this->Task test */
+    public function testTaskInstance() {
+        $this->assertTrue(is_a($this->Task,'App\Model\Entity\Task'));
     }
 }
