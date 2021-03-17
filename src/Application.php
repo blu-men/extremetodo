@@ -52,9 +52,9 @@ class Application extends BaseApplication
          * Only try to load DebugKit in development mode
          * Debug Kit should not be installed on a production system
          */
-        if (Configure::read('debug')) {
-            $this->addPlugin(\DebugKit\Plugin::class);
-        }
+        // if (Configure::read('debug')) {
+        //     $this->addPlugin(\DebugKit\Plugin::class);
+        // }
     }
 
     /**
@@ -82,9 +82,9 @@ class Application extends BaseApplication
             ->add(new RoutingMiddleware($this, '_cake_routes_'))
 
             // Add csrf middleware.
-            ->add(new CsrfProtectionMiddleware([
-                'httpOnly' => false
-            ]));
+            // ->add(new CsrfProtectionMiddleware([
+            //     'httpOnly' => false
+            ;
         
             return $middlewareQueue;
     }
