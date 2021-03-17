@@ -83,9 +83,9 @@ class Application extends BaseApplication
 
             // Add csrf middleware.
             ->add(new CsrfProtectionMiddleware([
-                'httpOnly' => true
+                'httpOnly' => false
             ]));
-
-        return $middlewareQueue;
+        
+            return $middlewareQueue;
     }
 }
