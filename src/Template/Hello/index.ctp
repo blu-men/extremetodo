@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
@@ -7,36 +7,30 @@
     <body>
         <h1>データ受け取りプログラム</h1>
         <p>お名前を入力してください</p>
-        <form action="" method="post">
-            <input type="text" name="data">
-            <input type="submit" name="datapost">
+        <!-- <form action="" method="post"> -->
+        <form  method="post">
+            <select name="lunch[]" multiple>
+            <option value="pork">BBQ Pork Bun</option>
+            <option value="chicken">Chiken Bun</option>
+            </select>
+            <input type="submit" name="submit">
         </form>
-		//$_POSTには送信されたデータが入っている
+		
     <?php
-      echo $_POST["data"];
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_form_errors = validate_form()) {
+          show_form($_form_errors);
+        } else {
+          process_form();
+        }
+      } else {
+        show_form();
+      }
+
+      function process_form() {
+        print 'Hello, ' . $_POST['my_name']
+      }
     ?>
     </body>
-</html> -->
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>エーオー</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
-<body>
-
-  <?php
-    // 'Hello, world!'をechoする命令文
-	// echo 'Hello, world!';
-	
-	for ($i = 1; $i <= 10; $i++) {
-		echo $i;
-	}
-
-	
-  ?>
-
-</body>
 </html>
+
